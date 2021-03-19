@@ -1,0 +1,10 @@
+.example-card {
+    /* max-width: 400px; */
+    justify-content: space-between;
+    margin: 100px 200px 0 200px;
+    text-align: center;
+    font-weight:bold;
+    font-style:italic;
+    background-color: aqua;
+  }
+  

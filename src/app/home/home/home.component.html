@@ -1,0 +1,28 @@
+<button mat-fab color="warn" routerLinkActive='active' [routerLink]="['/home/0/add']">
+    <mat-icon>add</mat-icon>
+</button>
+
+<table mat-table [dataSource]="homes" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="number">
+        <th mat-header-cell *matHeaderCellDef> House No. </th>
+        <td mat-cell *matCellDef="let element"><a [routerLink]="['/home', element.id]" >
+            {{ element.houseNumber }}
+        </a></td>
+    </ng-container>
+
+    <ng-container matColumnDef="address">
+        <th mat-header-cell *matHeaderCellDef> House Address </th>
+        <td mat-cell *matCellDef="let element"><a [routerLink]="['/home', element.id]">    
+            {{ element.houseAddress }}
+        </a> </td>
+    </ng-container>
+
+    <ng-container matColumnDef="length">
+        <th mat-header-cell *matHeaderCellDef> Total Members </th>
+        <td mat-cell *matCellDef="let element"> {{element.members.length}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

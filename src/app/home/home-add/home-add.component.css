@@ -1,0 +1,30 @@
+.example-card{
+    width:90%;
+    margin-left: 5%;
+    margin-top: 2%;
+}
+
+/* .example-container{
+    text-align: center
+} */
+
+.age{
+    max-width:50%;
+}
+
+.form-container{
+    width: 400 px; 
+    margin: 0 px auto; 
+    margin-top: 200 px
+}
+
+
+
+.form-field{
+    display: block
+}
+.same{
+    display:inline-block;
+    padding-left: 2%;
+}
+

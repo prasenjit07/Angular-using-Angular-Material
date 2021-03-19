@@ -1,0 +1,39 @@
+<mat-card class="example-card">
+    <mat-card-header>
+        <mat-card-title>House Number - {{home.houseNumber}}</mat-card-title>
+        <mat-card-subtitle>House Addess - {{ home.houseAddress}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content *ngIf="home">
+        <table mat-table [dataSource]="home.members" class="mat-elevation-z8">
+
+            <ng-container matColumnDef="name">
+              <th mat-header-cell *matHeaderCellDef> Name </th>
+              <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+            </ng-container>
+          
+            
+            <ng-container matColumnDef="gender">
+              <th mat-header-cell *matHeaderCellDef> Gender </th>
+              <td mat-cell *matCellDef="let element"> {{element.gender}} </td>
+            </ng-container>
+          
+            
+            <ng-container matColumnDef="age">
+              <th mat-header-cell *matHeaderCellDef> Age </th>
+              <td mat-cell *matCellDef="let element"> {{element.age}} </td>
+            </ng-container>
+          
+          
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-raised-button color="accent" (click)="onBack()"><i class="fa fa-chevron-left"></i> Back</button>
+        <button mat-raised-button color="accent" [routerLink]="['/home', home.id, 'add']">Edit</button>
+    </mat-card-actions>
+</mat-card>
+
+
+    <div class="alert alert-danger" *ngIf="errorMessage">{{errorMessage}}
+    </div>
